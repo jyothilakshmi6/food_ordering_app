@@ -315,7 +315,8 @@ def register():
     if len(users) == 0:
         user_id = 1
     else:
-        user_id = users[-1]['user_id'] + 1
+        last_user_id = max([int(key) for key in users.keys()])
+        user_id = last_user_id + 1
 
     # Get user details
     full_name = input('Enter your full name: ')
